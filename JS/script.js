@@ -191,6 +191,13 @@ const products = [ //Tablica produktów, które zostaną wyświetlone na stronie
     },
 ];
 
+const initLocalStorage = () => { //Funkcja inicjalizująca localStorage
+    if(localStorage.getItem("products") === null) {
+        localStorage.setItem("products", JSON.stringify([]));
+    }
+}
+initLocalStorage();
+
 const initToggle = () => { //Funkcja dodająca obsługę zdarzenia kliknięcia w przycisk menu na urządzeniach mobilnych
     const { header, toggleNav } = headerElements; //Zapisanie do zmiennych elementów DOM
 
