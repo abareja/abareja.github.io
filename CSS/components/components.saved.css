@@ -4,6 +4,9 @@
 
 .c-saved__table-image img {
     max-height: 100px;
+    max-width: 200px;
+    height: auto;
+    width: auto;
 }
 
 @media screen and (max-width: 768px) {
