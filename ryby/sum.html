@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'><!--Ustawienie kodowania znaków-->
+    <title>Sum</title><!--Ustawienie tytułu strony widocznego na karcie w przeglądarce-->
+    <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=true'><!--Okreslenie ze dokument zostal dostosowany do urzadzen mobilnych-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel='stylesheet' type='text/css' media='screen' href='../CSS/style.css'><!--Dołączenie pliku CSS-->
+    <link href='https://css.gg/css' rel='stylesheet'>
+    <link rel="icon" type="image/png" href="../images/logo.png"/><!--ustawienie ikony widocznej na karcie w przeglądarce-->
+    <!--Dołączenie czcionki-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="c-header js-header"><!--Otwarcie elementu header - naglowka strony-->
+        <div class="c-header__toggle js-header-toggle"><!--Ikona menu, wyswietlana tylko na urzadzeniach mobilnych, po kliknieciu w nią pojawia się menu-->
+            <span class="c-header__toggle-bar c-header__toggle-bar--top"></span><!--Pierwsza część ikony-->
+            <span class="c-header__toggle-bar c-header__toggle-bar--middle"></span><!--Druga część ikony-->
+            <span class="c-header__toggle-bar c-header__toggle-bar--bottom"></span><!--Trzecia część ikony-->
+        </div>
+        <div class="c-header__logo"><!--Element blokowy div, w ktorym wyswietlone zostanie logo-->
+            <a href="../index.html"><!--Link do elementu o id home - banera-->
+                <img src="../images/logo.png" /><!--Logo strony wyswietlane w naglowku-->
+            </a>
+        </div>
+        <nav class="c-header__nav"><!--Element nawigacyjny, zawierajacy listę linków służących do poruszania się po stronie-->
+            <ul class="c-header__list"><!--Lista linków nawigacyjnych-->
+                <li class="c-header__list-item"><!--Element listy menu-->
+                    <a href="../index.html">Home</a>
+                </li>
+                <li class="c-header__list-item has-children is-active">
+                    <a href="../ryby.html">Ryby</a><!--Link do elementu-->
+                    <ul class="c-header__list c-header__list--subnav">
+                        <li class="c-header__list-item">
+                            <a href="amur.html">Amur</a>
+                        </li>
+                        <li class="c-header__list-item">
+                            <a href="bolen.html">Boleń</a>
+                        </li>
+                        <li class="c-header__list-item">
+                            <a href="dorsz.html">Dorsz</a>
+                        </li>
+                        <li class="c-header__list-item">
+                            <a href="karas.html">Karaś</a>
+                        </li>
+                        <li class="c-header__list-item">
+                            <a href="Karp.html">Karp</a>
+                        </li>
+                        <li class="c-header__list-item">
+                            <a href="klen.html">Kleń</a>
+                        </li>
+                        <li class="c-header__list-item">
+                            <a href="../ryby.html">Atlas ryb</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="c-header__list-item">
+                    <a href="../news.html">Aktualności</a>
+                </li>
+                <li class="c-header__list-item">
+                    <a href="../catalog.html">Katalog</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="c-header__fill">
+            <a href="../saved.html" class="c-header__saved"><i class="bi bi-heart"></i></a>
+        </div><!--Element blokowy div, który posłuży do wypełnienia pozostałego obszaru menu, tak aby lista linków znalazła się na środku nagłówka-->
+    </header>  
+    <main><!--Element przechowujący główną treść na stronie-->
+        <div class="container">
+            <div class="text-center my-5">
+                <h1 class="o-page-title">Sum</h1>
+            </div>
+            <div class="c-text mb-5">
+                <img class="c-text__image" src="../images/ryby/sum.jpg" />
+                Sum&nbsp;(<i>silurus glanis L</i>)&nbsp;Rodzina:&nbsp;sumowate (<i>siluridae</i>)<br><br><p style="text-align:justify"><b>Występowanie:</b> sum występuje w jeziorach, zb. zaporowych, rzekach średnich nizinnych, rzekach wielkich nizinnych.<br><br><b>Morfologia:</b> sum charakteryzuje się przede wszystkim dużą, szeroką i spłaszczoną głową z obszerną paszczą uzbrojoną na brzegach w gęste, liczne i drobne ząbki. Jednak najbardziej zwracają uwagę wąsy suma: dwa najdłuższe, ruchome, wyrastają na szczęce górnej i sięgają aż do płetw piersiowych, cztery krótsze znajdują się na żuchwie. Sum ma nagie ciało, z boków lekko ścieśnione, grzbiet ciemny, oliwkowozielony, brzuch biały, na bokach nieregularne ciemnobrunatne plamy. <br><br><b>Żerowanie:</b> sumy ryby nie polują tak jak szczupak, sandacz czy okoń według jednej, wrodzonej metody. Czasami jak przysłowiowa burza sum wpada w stado białej ryby i chwyta co popadnie, kiedy indziej w świetle księżyca nie daruje nawet samotnej rybce przepływającej w pobliżu jego stanowiska, nierzadko uderzając potężnym ogonem w ławicę białorybu, po czym wyjada ogłuszone rybki. Mniejsze sumy potrafią też niczym sandacze uganiać się za sporymi płociami czy leszczami. <br><br><b> Rozmnażanie:</b> sum osiąga dojrzałość płciową między trzecim, a szóstym rokiem życia, przy temperaturze wody 18C, co dla naszych wód oznacza okres od maja do czerwca, a nawet lipca, sum odbywa tarło. Wypływa wtedy z głębokich toni i niewielkimi stadami ciągnie na rzeczne mielizny o silniejszym prądzie, a w jeziorach ku wygrzanym brzegom. Najpierw 3-4 samce „zalecają” się do jednej samicy – trwa swoista pogoń za „narzeczoną”. Niektórzy obserwatorzy twierdzą nawet, że samica przyzywa wtedy samców „kwokaniem”, przypominającym nieco rechotanie żab. Sum składa ikrę (średnicy 2,0-2,5mm) na podłożu roślinnym, na głębokości 40-50cm. Po 7-10 dniach z ikry wykluwają się małe sumy, które przez pierwsze dni pozostają w gnieździe, żywiąc się drobinami iłu i wodnych roślin. Później stopniowo odpływają w różnych kierunkach, co zbiega się często z opadaniem wód wiosennego przyboru. Młode sumy początkowo rosną bardzo szybko i po 30-40 dniach osiągają już długość ciała dochodzącą do 15cm, po 4-5 miesiącach ważą 400-600g, a przez pierwsze 5 lat ich waga podwaja się mniej więcej co roku tak, że 3-letni drapieżnik waży 2-2,5kg i mierzy 70cm, 4-letni osiąga już ciężar 4-5kg, a 5-letni - 8-9kg.<br><br><b> Sum okres ochronny:</b> 1 listopada do 30 czerwca* w rzece Odrze od ujścia rzeki Warty do granicy z wodami morskimi od 1 grudnia do 31 maja.<br><br><b> Sum wymiar ochronny:</b> 70 cm<br><br><b> Sum dobowy limit połowu:</b> 1 szt.<br><br><b> Sum rekord Polski:</b> 245 cm i 102 kg (Wiadomości Wędkarskie) – 21-08-2009r.</p></div>
+            </div>
+        </div>
+    </main>
+    <footer class="c-footer"><!--Otwarcie elementu footer-->
+        <div class="o-wrapper"><!--Ponowne użycie klasy o-wrapper-->
+            <div class="c-footer__content"><!--Element przechowujący zawartość stopki-->
+                Autor: Adrian Bareja
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../JS/script.js" type="text/javascript"></script>
+</body>
+</html>

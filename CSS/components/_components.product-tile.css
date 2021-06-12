@@ -1,0 +1,36 @@
+.c-product-tile {
+    padding: var(--spacing-small);
+    margin-bottom: var(--spacing-small);
+}
+
+.c-product-tile__image {
+    height: 200px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: var(--spacing);
+}
+
+.c-product-tile__name {
+    color: #000;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: center;
+    min-height: 3em;
+}
+
+.c-product-tile__add {
+    font-size: 20px;
+    color: var(--g600);
+    transition: font-size .3s;
+    position: absolute;
+}
+
+.c-product-tile__add:hover {
+    font-size: 22px;
+}
+
+.c-product-tile__add.is-added {
+    color: red;
+    border-color: red;
+}

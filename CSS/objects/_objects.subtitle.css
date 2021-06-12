@@ -1,0 +1,6 @@
+ /*Styl klasy o-subtitle*/
+
+.o-subtitle {
+    font-size: 1.5em; /*Ustawienie wielkości czcionki na 1.5em*/
+    font-weight: 300; /*Ustawienie grubości czcionki na 300*/
+}

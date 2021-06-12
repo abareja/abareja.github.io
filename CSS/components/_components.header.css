@@ -1,0 +1,233 @@
+/*Styl nagłówka strony*/
+
+.c-header {
+    position: fixed;  /*Ustawienie pozycji na fixed, nagłówek pozostanie na górze ekranu podczas przewijania*/
+    top: 0;  /*Ustawienie pozycji*/
+    left: 0;  /*Ustawienie pozycji*/
+    right: 0;  /*Ustawienie pozycji*/
+    z-index: 100;  /*Ustawienie indeksu z aby nagłówek był nad innymi elementami*/
+    height: var(--header-height);  /*Ustawienie wysokości nagłówka*/
+    background: #fff;  /*Ustawienie koloru tła*/
+    display: flex; /*Ustawienie wyświetlenia jako flexbox*/
+    justify-content: center; /*Wyśrodkowanie elementów w poziomie*/
+    align-items: center; /*Wyśrodkowanie elementów w pionie*/
+    padding: 0 var(--spacing); /*Ustawienie odstępu wewnętrznego po lewej i prawej stronie*/
+    box-shadow: 0 0 20px -5px rgba(0, 0, 0, .3); /*Ustawienie cienia nagłówka*/
+}
+
+.c-header__logo img {
+    max-height: calc(var(--header-height) - var(--spacing)); /*Ustawienie maksymalnej wysokości logo*/
+}
+
+.c-header__logo, .c-header__fill {
+    flex: 1; /*Ustawienie to powoduje, że elementy wypełnią całe dostepne miejsce rodzica*/
+}
+
+.c-header__fill {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.c-header__saved {
+    color: #000;
+    font-size: 22px;
+}
+
+.c-header__saved i {
+    vertical-align: middle;
+}
+
+.c-header__saved:hover {
+    color: red;
+}
+
+.c-header__nav {
+    flex: 2; /*Ustawienie to spowoduje, że ten element zajmie dwa razy więcej miejsca niż elementy o ustawieniu flex: 1*/
+    max-width: 992px; /*Ustawienie maksymalnej szerokości*/
+    text-align: center;
+}
+
+.c-header__list {
+    display: flex; /*Ustawienie trybu wyświetlania, aby lista wyświetlała się w poziomie*/
+    justify-content: space-between; /*Rozmieszczenie elementów listy z odstępami między nimi*/
+    list-style: none; /*Usunięcie domyślnego wypunktowania elementów listy*/
+    margin: 0; /*Usunięcie domyślnego marginesu listy*/
+    padding: 0; /*Usunięcie domyślnego odstępu wewnętrznego listy*/
+}
+
+.c-header__list-item {
+    position: relative;
+    margin: var(--spacing-small);  /*Margines elementu listy*/
+    padding: var(--spacing-small) 0;
+}
+
+.c-header__list--subnav .c-header__list-item {
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.c-header__list--subnav .c-header__list-item a {
+    font-size: 1em;
+    display: block;
+    padding: var(--spacing-small);
+    transition: padding .2s;
+}
+
+.c-header__list--subnav .c-header__list-item a:hover {
+    background: var(--light);
+    padding-left: calc(var(--spacing-small) + var(--spacing-tiny));
+}
+
+.c-header__list--subnav .c-header__list-item a:after {
+    display: none;
+}
+
+.c-header__list-item:hover > .c-header__list--subnav {
+    opacity: 1;
+    visibility: visible;
+}
+
+.c-header__list-item.is-open > .c-header__list--subnav {
+    display: block;
+}
+
+.c-header__list-item a {
+    padding: var(--spacing-tiny) 0;  /*Odstępy wewnętrzne linku listy*/
+    font-size: 1.25em;  /*Ustawienie rozmiaru czcionki*/
+    color: #000;  /*Ustawienie koloru czcionki*/
+    position: relative;  /*Ustawienie trybu pozycjonowania*/
+}
+
+.c-header__list-item a:after {
+    content: '';  /*Ustawienie zawartości pseudoelementu*/
+    position: absolute; /*Ustawienie trybu pozycjonowania elementu na pozycjonowanie absolutne - względem rodzica o pozycjonowaniu relative*/
+    left: 50%; /*Ustawienie lewej pozycji pseudoelementu*/
+    bottom: 0; /*Ustawienie dolnej pozycji pseudoelementu*/
+    display: block;  /*Ustawienie trybu wyświetlania pseudelementu na blok*/
+    height: 1px;  /*Ustawienie wysokości podkreślenia elementu listy*/
+    width: 0;  /*Ustawienie szerokości podskreślenia*/
+    background-color: #000;  /*Ustawienie koloru podkreślenia*/
+    transform: translateX(-50%);
+    transition: width .3s cubic-bezier(.97,.12,.65,.99);  /*Ustawienie animacji zmiany szerokości podkreślenia*/
+} 
+
+.c-header__list-item a:hover:after, .c-header__list-item.is-active a:after {
+    width: 100%; /*Po najechaniu kursorem myszy zmieniamy szerokość podkreślenia na 100%*/
+}
+
+.c-header__list--subnav {
+    display: none;
+    background: #fff;
+}
+
+.c-header__toggle {  /*Styl ikony menu*/
+    position: absolute; /*Ustawienie trybu pozycjonowania*/
+    top: 50%; /*Razem z właściwością transform, powoduje to wyśrodkowanie elemtnu w pionie*/
+    transform: translateY(-50%); 
+    right: var(--spacing); /*Ustawienie pozycji elementu*/
+    display: block; /*Ustawienie trybu wyświetlania elementu*/
+    width: 30px; /*Ustawienie szerokości*/
+    height: 30px; /*Ustawienie wysokości*/
+    display: none; /*Ukrycie elementu*/
+    cursor: pointer; /*Właściwość ta powoduje, że po najechaniu kursorem na element zmieni się on na "łapkę" */
+    z-index: 10; /*Ustawienie indeksu z, aby wyświetlał się nad elementami o niższym indeksie*/
+}
+
+.c-header__toggle-bar { /*Styl pojednczej części ikony*/
+    width: 100%; /*Ustawienie szerokości na 100%*/
+    height: 2px; /*Ustawienie wyokości paska*/
+    background-color: #000; /*Ustawienie koloru*/
+    position: absolute; /*Ustawienie trybu pozycjonowania*/
+    transition: all .3s; /*Dodanie przejść*/
+}
+
+.c-header__toggle-bar--top {
+    top: 6px; /*Ustawienie pozycji pierwszego paska*/
+}
+
+.c-header__toggle-bar--middle {
+    top: 14px; /*Ustawienie pozycji drugiego paska*/
+}
+
+.c-header__toggle-bar--bottom {
+    top: 22px; /*Ustawienie pozycji trzeciego paska*/
+}
+
+.c-header__toggle.is-open .c-header__toggle-bar--top { /*Zmiana stylu ikony meny po włączeniu wyświetlania menu*/
+    transform: rotate(45deg); /*Obrócenie belki ikony tak, aby utworzyła część znaku X*/
+    top: 50%; /*Zmiana pozycji belki*/
+}
+
+.c-header__toggle.is-open .c-header__toggle-bar--middle { /*Zmiana stylu ikony meny po włączeniu wyświetlania menu*/
+    width: 0; /*Ustawienie szerokości środkowej belki ikony*/
+    opacity: 0; /*Ustawienie przeźroczystości środkowej belki ikony*/
+}
+
+.c-header__toggle.is-open .c-header__toggle-bar--bottom { /*Zmiana stylu ikony meny po włączeniu wyświetlania menu*/
+    transform: rotate(-45deg); /*Obrócenie belki ikony tak, aby utworzyła część znaku X*/
+    top: 50%; /*Zmiana pozycji belki*/
+}
+
+@media  (min-width: 992px) {
+    .c-header__list--subnav {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity .4s ease-in-out;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, .15);
+        min-width: 200px;
+        border-top: 1px solid var(--light);
+    }
+}
+
+@media screen and (max-width: 992px) { /*Style dla urządzeń mobilnych*/
+    .c-header__nav {
+        display: none; /*Ukrycie listy menu*/
+    }
+    .c-header__toggle {
+        display: block; /*Wyświetlenie ikony menu*/
+    }
+    .c-header__nav {
+        position: fixed; /*Ustawienie trybu pozycjonowania menu*/
+        top: 0; /*Ustawienie pozycji*/
+        left: 100%; /*Ustawienie pozycji*/
+        width: 100%; /*Ustawienie szerokości*/
+        bottom: 0; /*Ustawienie pozycji*/
+        display: flex; /*Ustawienie trybu wyświetlania*/
+        align-items: center; /*Wyśrodkowanie elementów menu w pionie*/
+        justify-content: center; /*Wyśrodkowanie elementów menu w poziomie*/
+        background: #fff; /*Ustawienie koloru tła*/
+        transition: left .7s ease, transform .7s ease; /*Dodanie płynnych przejść*/
+        max-width: 100%; /*Ustawienie maksymalnej szerokości*/
+        box-shadow: 0 0 20px -5px rgba(0, 0, 0, .3); /*Dodanie cienia*/
+    }
+    .c-header__list {
+        flex-direction: column; /*Na urządzeniach mobilnych lista menu wyświetlana jest w pionie*/
+        width: 100%;
+    }
+    .c-header__list-item {
+        padding: 0;
+    }
+    .c-header.is-open .c-header__nav {
+        left: 0%; /*Kliknięcie w ikonę menu spowoduje, że menu przesunie się do lewej strony ekranu*/
+    }
+    .c-header__list--subnav {
+        margin-top: var(--spacing-small);
+    }
+    .c-header__list--subnav .c-header__list-item a {
+        background: var(--light);
+    }
+    .c-header__list--subnav .c-header__list-item a:hover {
+        background: var(--g100);
+    }
+    .c-header__fill {
+        padding-right: 46px;
+    }
+}

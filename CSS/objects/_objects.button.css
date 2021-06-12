@@ -1,0 +1,69 @@
+/*Style odpowiadające za wygląd przycisków*/
+
+.o-button {
+    position: relative;  /*Ustawienie pozycji relative, tak aby pseudoelement after mógł zostać wypozycjonowany względem tego elementu*/
+    display: inline-block; /*Ustawienie trybu wyświetlania na blokowy w linii*/
+    background: transparent;  /*Ustawienie tła na przezroczyste*/
+    border: 2px solid;   /*Ustawienie obramowania przycsiku na 2px szerokości, ciągłą linią*/
+    padding: var(--spacing-small);  /*Ustawienie odstępów wewenętrznych na spacing-small = 16px*/
+    overflow: hidden;    /*Ta właściwość powoduje ucinanie elementów zawierających się w tym, które wychodzą poza jego obręb*/
+    z-index: 0;  /*Ustawienie indeksu z elementu na 0, dzięki temu tekst znajdujący się w przycisku znajdzie się nad pseudoelementem*/
+    transition: color .1s;  /*Dodanie przejścia w kolorze czcionki, kolor nie zmieni się od rau tylko będzie widoczne płynne przejście*/
+    cursor: pointer; /*Ustawienie wygladu kursora po najechaniu na element na "łapkę"*/
+}
+
+.o-button:after { /*Pseudoelement after, który posłuży do stworzenia animacji zmiany tła przycisku po najchaniu na niego kursorem*/
+    content: ''; /*Ustawienie zawartości pseudoelementu*/
+    display: block; /*Ustawienie trybu wyświetlania pseudelementu na blok*/
+    position: absolute; /*Ustawienie trybu pozycjonowania elementu na pozycjonowanie absolutne - względem rodzica o pozycjonowaniu relative*/
+    z-index: -1; /*Ustawienie indeksu na -1, tak aby wyświetlał się pod przyciskiem*/
+    left: -2px; /*Ustawienie lewej pozycji pseudoelementu*/
+    right: -2px; /*Ustawienie prawej pozycji pseudoelementu*/
+    bottom: 0; /*Ustawienie dolnej pozycji pseudoelementu*/
+    top: 0; /*Ustawienie górnej pozycji pseudoelementu*/
+    transform: translateY(100%); /*Przesunięcie pseudoelementu o całą swoją wysokość w dół*/
+    transition: transform .3s cubic-bezier(0.075, 0.82, 0.165, 1); /*Dodanie przejścia przesuwania pseudoelementu*/
+}
+
+.o-button:hover:after { 
+    transform: translateY(0);  /*Po najechaniu na przycisk zmieniamy właściwość transform pseudoelementu, tak aby przesunął się pod przycisk*/
+}
+
+.o-button--white {  /*Definicja klasy białego przycisku*/
+    border-color: #fff; /*Ustawienie koloru obramowania na biały*/
+    color: #fff; /*Ustawienie koloru czcionki na biały*/
+}
+
+.o-button--white:after { 
+    background-color: #fff; /*Ustawienie koloru tła pseudoelementu dla białego przycisku*/
+}
+
+.o-button--white:hover { 
+    color: #000;    /*Ustawienie koloru czcionki białego przycisku po najechaniu na niego kursorem*/
+}
+
+.o-button--black {  /*Definicja klasy białego przycisku*/
+    border-color: #000; /*Ustawienie koloru obramowania na biały*/
+    color: #000; /*Ustawienie koloru czcionki na biały*/
+}
+
+.o-button--black:after { 
+    background-color: #000; /*Ustawienie koloru tła pseudoelementu dla białego przycisku*/
+}
+
+.o-button--black:hover { 
+    color: #fff;    /*Ustawienie koloru czcionki białego przycisku po najechaniu na niego kursorem*/
+}
+
+.o-button--primary {  /*Definicja klasy przycisku w kolorze pod zmienna primary*/
+    border-color: var(--primary-color); /*Ustawienie koloru obramowania na primary*/
+    color: var(--primary-color); /*Ustawienie koloru czcionki na primary*/
+}
+
+.o-button--primary:after {
+    background-color: var(--primary-color); /*Ustawienie koloru tła pseudoelementu dla przycisku w kolorze primary*/
+}
+
+.o-button--primary:hover {
+    color: #fff;    /*Ustawienie koloru czcionki przycisku w kolorze primary po najechaniu na niego kursorem na biały*/
+}

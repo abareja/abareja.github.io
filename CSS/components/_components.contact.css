@@ -1,0 +1,57 @@
+.c-contact {
+    padding: var(--spacing-large) 0; /*Ustawienie odstępów wewnętrznych na górze i na dole na spacing-large = 64px*/
+    border-top: 1px solid #efefef;
+}
+
+.c-contact__title {
+    position: relative; /*Ustawienie trybu pozycjonowania na relative*/
+    display: inline-block; /*Ustawienie trybu wyświetlania na blokowy w linii*/
+    margin-bottom: var(--spacing-small); /*Dodanie marginesu dolnego*/
+    padding-bottom: var(--spacing-small); /*Ustawienie odstępu wewnętrznego dolnego*/
+}
+
+.c-contact__title:after {
+    content: ''; /*Ustawienie zawartości pseudoelementu*/
+    display: block; /*Ustawienie trybu wyświetlania pseudelementu na blok*/
+    position: absolute; /*Ustawienie trybu pozycjonowania elementu na pozycjonowanie absolutne - względem rodzica o pozycjonowaniu relative*/
+    bottom: 0; /*Ustawienie dolnej pozycji pseudoelementu*/
+    left: 0; /*Ustawienie lewej pozycji pseudoelementu*/
+    height: 1px; /*Ustawienie wysokości pseudoelementu*/
+    width: 0; /*Ustawienie szerokości pseudoelementu*/
+    background-color: #000; /*Ustawienie koloru tła pseudoelementu*/
+    animation: text-animation 2s;  /*Ustawienie animacji*/
+    animation-delay: 1s;  /*Ustawienie opóźnienia animacji*/
+    animation-fill-mode: forwards;  /*Takie ustawienie spowoduje, że po zakończeniu animacji zostanie zachowany jej końcowy stan*/
+}
+
+.c-contact__form {
+    max-width: 600px;  /*Ustawienie maksymalnej szerokości formularza*/
+    margin-left: auto;  /*Ustawienie lewego marginesu*/
+    margin-right: auto;  /*Ustawienie prawego marginesu, spowoduje to wyśrodkowanie formularza horyzontalnie*/
+    margin-top: var(--spacing-large); /*Ustawienie górnego marginesu*/
+}
+
+.c-contact__form-item { 
+    width: 100%; /*Ustawienie szerokości elementu przechowującego pole formularza na 100%*/
+}
+
+.c-contact__form-item--half {
+    width: calc(50% - var(--spacing-small)); /*Dodanie tej klasy do elementu .c-contact__form-item spowoduje, że w jednej linii mogą być wyświetlone dwa pola formularza*/
+}
+ 
+.c-contact__form-group {
+    display: flex;  /*Ustawienie trybu wyświetlania wiersza formularza na flex, aby możliwe było wyświetlenie dwóch pól obok siebie*/
+    flex-wrap: wrap;  /*Właściwość ta pozwala elementom na przejście do nowej linii kiedy nie mieszczą się one obok siebie*/
+    justify-content: space-between;  /*Ustawienie rozmieszczenia elementów w poziomie, tak aby zachowany był odstęp między elementami*/
+}
+
+.c-contact__form-button {
+    width: 100%;  /*Ustawienie szerokości przycisku formularza na 100%*/
+    font-size: 17px;  /*Ustawienie wielkości czcionki przycisku formularza*/
+}
+
+@media screen and (max-width: 768px) {
+    .c-contact__form-item--half {
+        width: 100%;  /*Dla ekranów o szerokości poniżej 768px, blok zajmujący wcześniej połowę szerokości ustawiamy na 100%, spowoduje to przeskoczenie pola formularza do kolejnego wiersza*/
+    }
+}

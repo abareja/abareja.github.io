@@ -1,0 +1,9 @@
+.o-tile {
+    box-shadow: 0 0 20px -5px rgba(0, 0, 0, .3);
+    transition: box-shadow .3s, transform .3s;
+}
+
+.o-tile:hover {
+    box-shadow: 0 0 25px -3px rgba(0, 0, 0, .3);
+    transform: translateY(-5px);
+}
