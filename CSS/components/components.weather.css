@@ -1,0 +1,17 @@
+.c-weather {
+    display: none;
+}
+
+.c-weather.is-initialized {
+    display: block;
+}
+
+.c-weather__temp {
+    font-size: 60px;
+    font-weight: 200;
+}
+
+.c-weather__icon img {
+    max-height: 120px;
+    width: auto;
+}

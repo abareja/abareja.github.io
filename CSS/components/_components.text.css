@@ -1,7 +1,0 @@
-.c-text__image {
-    float: right;
-    margin: var(--spacing-small);
-    max-width: calc(100% - var(--spacing));
-    height: auto;
-    max-height: 200px;
-}

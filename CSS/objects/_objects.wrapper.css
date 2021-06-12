@@ -1,9 +1,0 @@
-/*Deklaracja klasy o-wrapper*/
-
-.o-wrapper {
-    max-width: 1200px;  /*Ustawienie maksymalnej szerokości elementu na 1200px*/
-    margin-left: auto;  /*Ustawienie automatycznego marginesu lewego*/
-    margin-right: auto;  /*Ustawienie automatycznego marginesu prawego*/
-    padding-left: var(--spacing);  /*Ustawienie wewnętrznego odstępu lewego na zdefiniowaną wartość przechowywaną w zmiennej spacing*/
-    padding-right: var(--spacing);  /*Ustawienie wewnętrznego odstępu prawego na zdefiniowaną wartość przechowywaną w zmiennej spacing*/
-}

@@ -1,0 +1,22 @@
+.c-weather-tile {
+    text-align: center;
+    padding: var(--spacing-small);
+    margin-bottom: var(--spacing-small);
+}
+
+.c-weather-tile__temp {
+    font-size: 24px;
+}
+
+.c-weather-tile__day {
+    margin-bottom: var(--spacing-tiny);
+}
+
+.c-weather-tile__icon {
+    margin-bottom: var(--spacing-small);
+}
+
+.c-weather-tile__icon img {
+    max-height: 100px;
+}
+

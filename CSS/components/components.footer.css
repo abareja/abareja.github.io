@@ -1,0 +1,10 @@
+.c-footer {
+    padding: var(--spacing-small) 0;  /*Odstęp wewnętrzny stopki, ustawiony na spacing-small = 16px w pionie i 0 w poziomie*/
+    border-top: 1px solid #e9e9e9;  /*Ustawienie górnej krawędzi stopki na linię o szerokości 1px i kolorze #e9e9e9*/
+    margin-top: auto;
+}
+
+.c-footer__content {
+    text-align: right; /*Ustawienie tekstu po prawej stronie*/
+    color: #999;     /*ustawienie koloru czcionki*/
+}

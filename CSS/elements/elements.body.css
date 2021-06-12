@@ -1,0 +1,16 @@
+a {
+    text-decoration: none;  /*Wyłaczenie podkreślenia wszystkich linków na stronie*/
+}
+
+html {
+    scroll-behavior: smooth;  /*Włączenie płynnego przewijania na stronie*/
+}
+
+body {
+    margin: 0; /*Ustawienie marginesu elementu body na 0*/
+    font-family: var(--font-base); /*Ustawienie czcionki*/
+    padding-top: var(--header-height); /*Ustawienie odstępu elementu body na wartość odpowiadającą wysokości nagłówka*/
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}

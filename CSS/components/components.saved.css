@@ -1,0 +1,13 @@
+.c-saved {
+
+}
+
+.c-saved__table-image img {
+    max-height: 100px;
+}
+
+@media screen and (max-width: 768px) {
+    .c-saved__table-price {
+        border-bottom: 1px solid #efefef !important;
+    }
+}
